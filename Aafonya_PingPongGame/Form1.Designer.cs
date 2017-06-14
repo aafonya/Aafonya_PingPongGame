@@ -29,11 +29,166 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.ball1 = new System.Windows.Forms.PictureBox();
+            this.autoMovingElement = new System.Windows.Forms.PictureBox();
+            this.MoveableElement = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ball1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoMovingElement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveableElement)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripSeparator1,
+            this.toolStripComboBox1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 81);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(138, 26);
+            this.contextMenuStrip2.Text = "Main Menu";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(137, 22);
+            this.toolStripMenuItem3.Text = "Registration";
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.Name = "contextMenuStrip3";
+            this.MainMenu.Size = new System.Drawing.Size(61, 4);
+            this.MainMenu.Opening += new System.ComponentModel.CancelEventHandler(this.MainMenu_Opening);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(155, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(347, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Stop";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // ball1
+            // 
+            this.ball1.Image = ((System.Drawing.Image)(resources.GetObject("ball1.Image")));
+            this.ball1.Location = new System.Drawing.Point(270, 154);
+            this.ball1.Name = "ball1";
+            this.ball1.Size = new System.Drawing.Size(58, 51);
+            this.ball1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball1.TabIndex = 6;
+            this.ball1.TabStop = false;
+            this.ball1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.ball1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            // 
+            // autoMovingElement
+            // 
+            this.autoMovingElement.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.autoMovingElement.Location = new System.Drawing.Point(12, 131);
+            this.autoMovingElement.Name = "autoMovingElement";
+            this.autoMovingElement.Size = new System.Drawing.Size(23, 108);
+            this.autoMovingElement.TabIndex = 7;
+            this.autoMovingElement.TabStop = false;
+            // 
+            // MoveableElement
+            // 
+            this.MoveableElement.BackColor = System.Drawing.Color.LightCoral;
+            this.MoveableElement.Location = new System.Drawing.Point(584, 131);
+            this.MoveableElement.Name = "MoveableElement";
+            this.MoveableElement.Size = new System.Drawing.Size(20, 108);
+            this.MoveableElement.TabIndex = 8;
+            this.MoveableElement.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ClientSize = new System.Drawing.Size(616, 355);
+            this.Controls.Add(this.MoveableElement);
+            this.Controls.Add(this.autoMovingElement);
+            this.Controls.Add(this.ball1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Name = "Form1";
+            this.Text = "PingPong";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ball1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoMovingElement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveableElement)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ContextMenuStrip MainMenu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox ball1;
+        private System.Windows.Forms.PictureBox autoMovingElement;
+        private System.Windows.Forms.PictureBox MoveableElement;
     }
 }
 
