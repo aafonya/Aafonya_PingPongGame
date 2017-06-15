@@ -43,11 +43,22 @@
             this.ball1 = new System.Windows.Forms.PictureBox();
             this.autoMovingElement = new System.Windows.Forms.PictureBox();
             this.MoveableElement = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.levelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoMovingElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoveableElement)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -100,7 +111,6 @@
             // 
             this.MainMenu.Name = "contextMenuStrip3";
             this.MainMenu.Size = new System.Drawing.Size(61, 4);
-            this.MainMenu.Opening += new System.ComponentModel.CancelEventHandler(this.MainMenu_Opening);
             // 
             // button1
             // 
@@ -120,9 +130,11 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.stopButton_Click);
             // 
             // ball1
             // 
+            this.ball1.ErrorImage = null;
             this.ball1.Image = ((System.Drawing.Image)(resources.GetObject("ball1.Image")));
             this.ball1.Location = new System.Drawing.Point(270, 154);
             this.ball1.Name = "ball1";
@@ -150,6 +162,90 @@
             this.MoveableElement.Size = new System.Drawing.Size(20, 108);
             this.MoveableElement.TabIndex = 8;
             this.MoveableElement.TabStop = false;
+            this.MoveableElement.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveableElement_MouseDown);
+            this.MoveableElement.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoveableElement_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(509, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(62, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(267, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "label3";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem,
+            this.toolStripMenuItem4});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(616, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.levelToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // levelToolStripMenuItem
+            // 
+            this.levelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.highToolStripMenuItem,
+            this.mediumToolStripMenuItem,
+            this.lowToolStripMenuItem});
+            this.levelToolStripMenuItem.Name = "levelToolStripMenuItem";
+            this.levelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.levelToolStripMenuItem.Text = "Level";
+            // 
+            // highToolStripMenuItem
+            // 
+            this.highToolStripMenuItem.Name = "highToolStripMenuItem";
+            this.highToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.highToolStripMenuItem.Text = "High";
+            this.highToolStripMenuItem.Click += new System.EventHandler(this.highToolStripMenuItem_Click);
+            // 
+            // mediumToolStripMenuItem
+            // 
+            this.mediumToolStripMenuItem.Name = "mediumToolStripMenuItem";
+            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mediumToolStripMenuItem.Text = "Medium";
+            this.mediumToolStripMenuItem.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
+            // 
+            // lowToolStripMenuItem
+            // 
+            this.lowToolStripMenuItem.Name = "lowToolStripMenuItem";
+            this.lowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lowToolStripMenuItem.Text = "Low";
+            this.lowToolStripMenuItem.Click += new System.EventHandler(this.lowToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(94, 20);
             // 
             // Form1
             // 
@@ -157,11 +253,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(616, 355);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.MoveableElement);
             this.Controls.Add(this.autoMovingElement);
             this.Controls.Add(this.ball1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "PingPong";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -170,7 +271,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ball1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoMovingElement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoveableElement)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -189,6 +293,16 @@
         private System.Windows.Forms.PictureBox ball1;
         private System.Windows.Forms.PictureBox autoMovingElement;
         private System.Windows.Forms.PictureBox MoveableElement;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem levelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem highToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }
 
