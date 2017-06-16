@@ -12,8 +12,8 @@ namespace Aafonya_PingPongGame
 {
     public partial class Form1 : Form
     {
-        System.Windows.Forms.Timer timer1;
-        System.Windows.Forms.Timer timer2 = new System.Windows.Forms.Timer();
+        Timer timer1;
+        Timer timer2 = new Timer();
 
         int xPos;
         int yPos;
@@ -28,8 +28,9 @@ namespace Aafonya_PingPongGame
         public Form1()
         {
             InitializeComponent();
-            label1.Text = scoreGamer.ToString();
+            label1.Text = scoreGamer.ToString(); //bad naming
             label2.Text = scoreAuto.ToString();
+            label3.Visible = false;
         }
 
 
@@ -61,28 +62,7 @@ namespace Aafonya_PingPongGame
 
         }
 
-        private void pictureBox1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                xPos = e.X;
-                yPos = e.Y;
-            }
-        }
-
-        private void pictureBox1_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            PictureBox p = sender as PictureBox;
-
-            if (p != null)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    p.Top += (e.Y - yPos);
-                    p.Left += (e.X - xPos);
-                }
-            }
-        }
+       
 
         int OrienttaionY = 2;
         int OrienttaionX = 20;
@@ -102,6 +82,24 @@ namespace Aafonya_PingPongGame
             if (ball1.Bounds.IntersectsWith(MoveableElement.Bounds))
             {
                 scoreGamer += 1;
+
+                if (scoreGamer == 10)
+                {
+                    timer1.Stop();
+                    timer2.Stop();
+                    menuStrip1.Visible = true;
+
+                    const string text = "You Win!";
+                    const string caption = "Result";
+                    MessageBoxButtons buttonsForMessageBox = MessageBoxButtons.OK;
+                    MessageBox.Show(text, caption, buttonsForMessageBox);
+
+                    scoreAuto = 0;
+                    scoreGamer = 0;
+                    label2.Text = scoreAuto.ToString();
+                    label1.Text = scoreGamer.ToString();
+                }
+
                 label1.Text = scoreGamer.ToString();
                 
                 ball1.Location = new Point(220, 120);
@@ -112,6 +110,22 @@ namespace Aafonya_PingPongGame
             if (ball1.Bounds.IntersectsWith(autoMovingElement.Bounds))
             {
                 scoreAuto += 1;
+                if (scoreAuto == 10)
+                {
+                    timer1.Stop();
+                    timer2.Stop();
+                    menuStrip1.Visible = true;
+
+                    const string text = "Game over";
+                    const string caption = "Result";
+                    MessageBoxButtons buttonsForMessageBox = MessageBoxButtons.OK;
+                    MessageBox.Show(text, caption, buttonsForMessageBox);
+
+                    scoreAuto = 0;
+                    scoreGamer = 0;
+                    label2.Text = scoreAuto.ToString();
+                    label1.Text = scoreGamer.ToString();
+                }
                 label2.Text = scoreAuto.ToString();
 
                 ball1.Location = new Point(220, 120);
@@ -216,19 +230,22 @@ namespace Aafonya_PingPongGame
             }
         }
 
-        private void highToolStripMenuItem_Click(object sender, EventArgs e)
+        private void highToolStripMenuItem_Click(object sender, EventArgs e) //initMethod
         {
             level = Level.High;
             label3.Text = level.ToString();
+            label3.Visible = true;
             MoveableElement.Height = 20;
             timer2.Interval = 50;
             menuStrip1.Visible = false;
+            
         }
 
         private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
         {
             level = Level.Medium;
             label3.Text = level.ToString();
+            label3.Visible = true;
             MoveableElement.Height = 60;
             timer2.Interval = 100;
             menuStrip1.Visible = false;
@@ -238,9 +255,12 @@ namespace Aafonya_PingPongGame
         {
             level = Level.Low;
             label3.Text = level.ToString();
+            label3.Visible = true;
             MoveableElement.Height = 100;
             timer2.Interval = 200;
             menuStrip1.Visible = false;
         }
+
+       
     }
 }
